@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUTURO AI 🤖</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            min-height: 100vh;
+        }
+        h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .ia { color: #00d9ff; }
+        .caja {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+        button {
+            background: #00d9ff;
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>🤖 FUTURO <span class="ia">AI</span></h1>
+    <p>Inteligencia Artificial para Android</p>
+    
+    <div class="caja">
+        <h2>¡Bienvenido!</h2>
+        <p>Estoy cobrando vida gracias a ti 💙</p>
+        <button onclick="saludar()">Activar AI</button>
+        <p id="respuesta" style="margin-top:20px; font-size:20px;"></p>
+    </div>
+
+    <script>
+        function saludar() {
+            document.getElementById('respuesta').innerHTML = "✅ ¡FUTURO AI ACTIVADA! 🚀✨ Estoy lista para aprender contigo.";
+        }
+    </script>
+</body>
+</html>
