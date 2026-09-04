@@ -1,25 +1,19 @@
-name: FUTURO AI Workflow
-
+name: Build FUTURO AI APK
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Obtener código
-        uses: actions/checkout@v4
-
-      - name: Configurar Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - name: Build APK
+        uses: xavierfoucrier/html-to-android-action@v2.0.0
         with:
-          node-version: '20'
-
-      - name: Instalar dependencias
-        run: npm install
-
-      - name: Compilar proyecto
-        run: npm run build --if-present
+          app_name: FUTURO-AI
+          app_package: com.futuroai.app
+          app_version: 1.0.0
+          app_url: ./index.html
+      - uses: actions/upload-artifact@v4
+        with:
+          name: FUTURO-AI-APK
+          path: app-debug.apk
