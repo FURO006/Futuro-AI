@@ -1,19 +1,23 @@
 name: Build FUTURO AI APK
 on:
   workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Build APK
-        uses: xavierfoucrier/html-to-android-action@v2.0.0
+        uses: xavierfoucrier/html-to-android@v2.4.0
         with:
           app_name: FUTURO-AI
           app_package: com.futuroai.app
           app_version: 1.0.0
           app_url: ./index.html
-      - uses: actions/upload-artifact@v4
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
         with:
           name: FUTURO-AI-APK
-          path: app-debug.apk
+          path: app/build/outputs/apk/debug/app-debug.apk
